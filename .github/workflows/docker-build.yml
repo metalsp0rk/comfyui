@@ -153,7 +153,7 @@ jobs:
                 # Docker.io Tags
                 TAGS="${TAGS}, ${img_path_dhub}:${COMFYUI_BUILD_REF}, ${img_path_dhub}:latest"
             else
-                TAGS="${img_path_ghcr}:${base_tag}-${COMFYUI_BUILD_REF}, ${img_path_dhub}:${COMFYUI_BUILD_REF}"
+                TAGS="${img_path_ghcr}:${base_tag}-${COMFYUI_BUILD_REF}"
             fi
             # Tag a devel build
             if [[ ${{ matrix.build.cuda }} = *-devel ]]; then
@@ -250,4 +250,3 @@ jobs:
           push: true
           provenance: false
           tags: ${{ env.TAGS }}
-
